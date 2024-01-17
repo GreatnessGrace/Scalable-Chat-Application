@@ -3,9 +3,15 @@ import { Server } from 'socket.io'
 class SocketService {
     private _io: Server;  // instance variable of our class
     constructor() {
-        console.log("Init Socket Service...")
-        this._io = new Server() // initialising socket.io server
-    }
+        console.log("Init Socket Service...");
+        this._io = new Server({
+          cors: {
+            allowedHeaders: ["*"],
+            methods: ["GET", "POST"],
+            origin: "*",
+          },
+        });
+      }
 
     public initListeners() {
         const io = this.io;
