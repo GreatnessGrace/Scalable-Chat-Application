@@ -19,7 +19,8 @@ class SocketService {
             console.log(`new socket connected`, socket.id);
 
             socket.on('event:message', async ({ message }: { message: string }) => {
-                console.log('New Message Rec', message)
+                console.log('New Message Received', message)
+                // Publish this message to redis
             })
         })
     }
