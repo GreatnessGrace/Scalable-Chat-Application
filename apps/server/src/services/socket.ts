@@ -24,6 +24,9 @@ const sub = new Redis({
   password: Password,
 });
 
+
+
+
 class SocketService {
     private _io: Server;  // instance variable of our class
 

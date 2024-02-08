@@ -9,22 +9,32 @@ export default function Page() {
 
   return (
     <div>
-      <div>
+      <div className="chatDiv">
+        <div>
+        <h3>Welcome to the IChat</h3>
+        </div>
+
+        <div className="buttonDiv">
         <input
           onChange={(e) => setMessage(e.target.value)}
           className={classes["chat-input"]}
           placeholder="Message..."
         />
-        <button
+        
+     
+      <button
           onClick={(e) => sendMessage(message)}
           className={classes["button"]}
         >
           Send
         </button>
       </div>
-      <div>
+        
+      </div>
+      <div className="listDiv">
         {messages.map((e) => (
-          <li>{e}</li>
+          <ul>
+          <li>{e}</li></ul>
         ))}
       </div>
     </div>
